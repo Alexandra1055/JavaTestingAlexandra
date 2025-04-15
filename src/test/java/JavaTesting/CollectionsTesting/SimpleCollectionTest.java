@@ -2,9 +2,7 @@ package JavaTesting.CollectionsTesting;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 import static org.junit.Assert.*;
 
@@ -94,6 +92,35 @@ public class SimpleCollectionTest {
         calculoDias.removeAll(diasFestivos);
 
         assertEquals(5, calculoDias.size());
+
+    }
+
+    @Test
+    public void pruebasConMapTest(){
+
+        Map<String,String> map = new HashMap<>();
+
+        map.put("fondos","negro");
+        map.put("menus","azul");
+        map.put("dialogos","verde");
+
+        assertEquals(map.size(),3);
+
+        assertTrue(map.containsKey("menus"));
+        assertTrue(map.containsValue("negro"));
+
+        map.remove("dialogos");
+
+        assertEquals(map.size(),2);
+
+        map.remove("claveInexesitente");
+
+        assertEquals(map.size(),2);
+
+        assertEquals(map.get("fondos"),"negro");
+
+
+
 
     }
 
