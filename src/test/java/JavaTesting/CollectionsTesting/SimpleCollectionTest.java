@@ -132,4 +132,17 @@ public class SimpleCollectionTest {
         dias.add("viernes");
 
     }
+
+    @Test
+    public void pruebasSetTest(){
+
+        Set<String> dias = new HashSet<>();
+
+        dias.add("lunes");
+        dias.add("lunes");
+        dias.add("lunes");
+
+        assertEquals(dias.size(),1);
+
+    }
 }
