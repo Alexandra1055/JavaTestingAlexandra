@@ -15,4 +15,20 @@ public class ExceptionsTest {
         assertEquals(""+18,edadEnLetras);
     }
 
+    @Test
+    public void catchNullPointerTest(){
+
+        Integer edad = null;
+
+        String edadEnLetras;
+
+        try{
+            edadEnLetras = edad.toString();
+        }catch ( NullPointerException npe ){
+            edad = 18;
+            edadEnLetras = edad.toString();
+        }
+        assertEquals(""+18,edadEnLetras);
+    }
+
 }
