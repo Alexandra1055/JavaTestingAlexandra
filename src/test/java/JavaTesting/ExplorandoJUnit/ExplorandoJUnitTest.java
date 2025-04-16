@@ -1,7 +1,6 @@
 package JavaTesting.ExplorandoJUnit;
 
-import org.junit.Rule;
-import org.junit.Test;
+import org.junit.*;
 import org.junit.rules.ExpectedException;
 
 
@@ -28,5 +27,25 @@ public class ExplorandoJUnitTest {
         expected.expectMessage("the");
 
         throw new IllegalArgumentException("the exception");
+    }
+
+    @BeforeClass
+    public static void ejecutaUnaVezPorClaseAntesDeCadaTest(){
+        System.out.println("Antes de ejecutar cualquier test, una vez por clase");
+    }
+
+    @AfterClass
+    public static void ejecutaUnaVezPorClaseDespuesDeCadaTest(){
+        System.out.println("Despues de ejecutar cualquier test, una vez por clase");
+    }
+
+    @Before
+    public void ejecutaAntesDeCadaTest(){
+        System.out.println("Antes de ejecutar cualquier test, por cada test!");
+    }
+
+    @After
+    public void ejecutaDespuesDeCadaTest(){
+        System.out.println("Despues de ejecutar cualquier test, por cada test!");
     }
 }
