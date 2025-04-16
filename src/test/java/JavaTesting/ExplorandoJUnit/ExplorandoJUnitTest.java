@@ -5,6 +5,7 @@ import org.junit.rules.ExpectedException;
 
 import java.util.Arrays;
 
+import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
 
 
@@ -79,5 +80,20 @@ public class ExplorandoJUnitTest {
 
         Object obj = null;
         assertSame(obj, null);
+    }
+
+    @Test
+    public void assertThatConHamcrest(){
+        assertThat("Testeamos que 4 + 5 son 9", 4+5, is(9));
+
+        assertThat("true es true", true, equalTo(true));
+
+        assertThat(true, is(true));
+
+        assertThat("Un String vacio no es null", is(not(nullValue())));
+
+        assertThat("Esto es un texto", containsString("un"));
+        assertThat("Esto es un texto", endsWith("xto"));
+        assertThat("Esto es un texto", startsWith("Est"));
     }
 }
